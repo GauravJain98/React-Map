@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^1.4.3",
     "google-map-react": "^1.0.6",
     "google-maps-react": "^2.0.2",
     "react": "^16.4.2",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.2",
     "react-pure-render": "^1.0.2",
     "react-scripts": "1.1.4"

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-// import GoogleMapReact from "google-map-react";
+import Input from "@material-ui/core/Input";
+import Button from "@material-ui/core/Button";
 import Pointer from "./components/pointer";
-
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 
-import styles from "./index.css";
-
+// import styles from "./autocomplete.module.css";
+const styles = {};
 class Contents extends Component {
   state = {
     position: null
@@ -50,16 +50,19 @@ class Contents extends Component {
     const { position } = this.state;
 
     return (
-      <div className={styles.flexWrapper}>
-        <div className={styles.left}>
-          <form onSubmit={this.onSubmit}>
-            <input
+      <div style={{ border: "5px green" }}>
+        <div className="">
+          <form className="flexWrapper" onSubmit={this.onSubmit}>
+            <Input
+              className="left"
               placeholder="Enter a location"
-              ref={ref => (this.autocomplete = ref)}
+              inputRef={inputRef => (this.autocomplete = inputRef)}
               type="text"
             />
 
-            <input className={styles.button} type="submit" value="Go" />
+            <Button className="right" type="submit">
+              Go
+            </Button>
           </form>
 
           <div>
@@ -68,7 +71,7 @@ class Contents extends Component {
           </div>
         </div>
 
-        <div className={styles.right}>
+        <div className="right" style={{ height: "80vh" }}>
           <Map
             {...this.props}
             center={position}
@@ -92,7 +95,6 @@ const MapWrapper = props => (
     <Contents {...props} />
   </Map>
 );
-
 export default GoogleApiWrapper({
   apiKey: "AIzaSyBw9fBoPfdryxzY1bTDzTMXYJHfhiVaCBQ"
 })(MapWrapper);

@@ -1,43 +1,62 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Roborto;
 }
 
 .flexWrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  .left {
-    flex: 1;
-    order: 1;
-    padding: 20px;
-  }
-  .right {
-    flex: 1;
-    order: 2;
-  }
-  form {
-    margin: 20px auto;
-    position: relative;
-    height: 30px;
-    input {
-      height: 100%;
-      font-size: 1.4em;
-    }
-    input[type=text] {
-      width: 80%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    input[type=submit] {
-      width: 20%;
-      position: absolute;
-      right: 0;
-      top: 2px;
-      border: 1px solid #ddd;
-      background: #FFF;
-    }
-  }
+  margin: 0.5em;
+}
+
+.left {
+  flex: 1;
+  order: 1;
+  padding: 20px;
+  margin: 1em;
+}
+
+.right {
+  flex: 1;
+  order: 2;
+  padding: 20px;
+  margin: 1em;
+}
+
+form {
+  margin: 20px auto;
+  position: relative;
+  height: 30px;
+}
+
+input,
+textarea,
+select,
+  {
+  background-color: #5e5d5a;
+  color: #e9e3d5;
+}
+
+html,
+body,
+button {
+  color: #212127;
+  background-color: #e9e3d5;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+.side {
+  flex: 1;
+  order: 1;
+  margin: 0;
+  padding: 0;
+  background: #404040;
+  border-right: 2px solid #1c7c99;
 }
