@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Input from "@material-ui/core/Input";
 import Button from "@material-ui/core/Button";
 import Pointer from "./components/pointer";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import { TextField } from "@material-ui/core";
 
 // import styles from "./autocomplete.module.css";
 const styles = {};
@@ -50,27 +50,53 @@ class Contents extends Component {
     const { position } = this.state;
 
     return (
-      <div style={{ border: "5px green" }}>
-        <div className="">
-          <form className="flexWrapper" onSubmit={this.onSubmit}>
-            <Input
-              className="left"
-              placeholder="Enter a location"
-              inputRef={inputRef => (this.autocomplete = inputRef)}
-              type="text"
-            />
-
-            <Button className="right" type="submit">
-              Go
-            </Button>
-          </form>
-
-          <div>
-            <div>Lat: {position && position.lat()}</div>
-            <div>Lng: {position && position.lng()}</div>
+      <div style={{ backgroundColor: "#006db3", height: "100vh" }}>
+        <div
+          style={{
+            padding: "0",
+            border: "0.25em solid #cfcfcf",
+            fontSize: "1.5em",
+            backgroundColor: "#63ccff"
+          }}
+        >
+          <div
+            style={{
+              width: "100%",
+              textAlign: "center",
+              padding: "0",
+              margin: "2em"
+            }}
+          >
+            <form
+              className="flexWrapper left"
+              style={{
+                fontSize: "2rem",
+                margin: "2px"
+              }}
+              onSubmit={this.onSubmit}
+            >
+              <TextField
+                placeholder="Enter a location"
+                inputRef={inputRef => (this.autocomplete = inputRef)}
+                type="text"
+                inputProps={{
+                  style: {
+                    flex: 1,
+                    order: 1,
+                    margin: "2px",
+                    fontSize: "2rem"
+                  }
+                }}
+              />{" "}
+              <div style={{ flex: 2, order: 2, margin: "2px" }}>
+                Lat: {position && position.lat()}
+              </div>
+              <div style={{ flex: 3, order: 3, margin: "2px" }}>
+                Lng: {position && position.lng()}
+              </div>
+            </form>
           </div>
         </div>
-
         <div className="right" style={{ height: "80vh" }}>
           <Map
             {...this.props}

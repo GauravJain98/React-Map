@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #5e5d5a;
   font-family: Roborto;
 }
 
@@ -14,14 +15,12 @@ body {
 .left {
   flex: 1;
   order: 1;
-  padding: 20px;
   margin: 1em;
 }
 
 .right {
   flex: 1;
   order: 2;
-  padding: 20px;
   margin: 1em;
 }
 
