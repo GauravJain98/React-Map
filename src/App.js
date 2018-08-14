@@ -69,10 +69,7 @@ class Contents extends Component {
           >
             <form
               className="flexWrapper left"
-              style={{
-                fontSize: "2rem",
-                margin: "2px"
-              }}
+              style={{ fontSize: "2rem", margin: "2px" }}
               onSubmit={this.onSubmit}
             >
               <TextField
@@ -80,18 +77,27 @@ class Contents extends Component {
                 inputRef={inputRef => (this.autocomplete = inputRef)}
                 type="text"
                 inputProps={{
-                  style: {
-                    flex: 1,
-                    order: 1,
-                    margin: "2px",
-                    fontSize: "2rem"
-                  }
+                  style: { flex: 1, order: 1, margin: "1em", fontSize: "2rem" }
                 }}
               />{" "}
-              <div style={{ flex: 2, order: 2, margin: "2px" }}>
+              <div
+                style={{
+                  overflow: "x-scroll",
+                  flex: 2,
+                  order: 2,
+                  margin: "1em"
+                }}
+              >
                 Lat: {position && position.lat()}
               </div>
-              <div style={{ flex: 3, order: 3, margin: "2px" }}>
+              <div
+                style={{
+                  overflow: "x-scroll",
+                  flex: 3,
+                  order: 3,
+                  margin: "1em"
+                }}
+              >
                 Lng: {position && position.lng()}
               </div>
             </form>
